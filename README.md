@@ -7,9 +7,15 @@ Brandon Rogers, University of Victoria
 
 This project studies which bot behaviors make P2P botnets harder to separate from legitimate P2P hosts when detection uses network structure alone.
 
-### Status
+### Progress
 
-Project proposal submitted. Updates will be posted here.
+- Repository and website set up.
+- Peer message framing (length prefix + SHA-256).
+- Two peers exchange HELLO, PING, and PONG over a local port.
+
+### Logbook
+
+See [docs/logbook.md](docs/logbook.md).
 
 ### Links
 

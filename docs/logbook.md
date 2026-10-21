@@ -8,6 +8,37 @@ This logbook records the work done on the project, in date order. Each entry lis
 
 ---
 
+### 2026-10-21
+
+### Done
+
+- Added `peer/messages.py`. It turns a message (a small dictionary) into bytes with JSON and sends it through the framing layer, and reads one message back.
+- Added `peer/peer.py`. A minimal peer that either listens on a local port or sends a PING to another peer. A listener greets each connection with HELLO and replies to a PING with a PONG.
+- Added `tests/test_messages.py` with two tests.
+
+### Tested
+
+Unit tests: `python3 -m unittest -v tests.test_messages tests.test_framing`
+
+Result: 5 tests ran, all passed.
+
+Live check with two peers:
+
+1. In one terminal: `python3 -m peer.peer listen 9001`
+2. In another: `python3 -m peer.peer ping 127.0.0.1 9001`
+
+The pinger printed received HELLO then received PONG. The listener printed received HELLO then received PING. The full handshake works between two separate programs over a real port.
+
+### Notes
+- Messages are JSON, so they are easy to read in logs and easy to extend later (for example, HELLO carrying a node id and port).
+- The peer is single-threaded and handles one connection at a time. Threads and timers come later, with check-in intervals.
+
+### Next
+
+Seed list and PEERS exchange, so peers can find each other.
+
+---
+
 ## 2026-10-13
 
 ### Done
