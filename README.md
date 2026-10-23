@@ -1,4 +1,4 @@
-## Which Bot Behaviors Make P2P Botnets Hard to Detect by Structure?
+## Evasion in P2P Botnet Detection: A Structural Network Analysis
 
 CSC579 Course Project, Fall 2026
 Brandon Rogers, University of Victoria
